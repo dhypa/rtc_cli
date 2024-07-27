@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af76fe2a-0807-4850-b496-ae431200f428" name="Changes" comment="Started making server and client methods to send messages">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="af76fe2a-0807-4850-b496-ae431200f428" name="Changes" comment="Server finished.">
+      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
@@ -43,7 +44,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Client.executor": "Run",
     "Application.Server.executor": "Run",
+    "Application.run chat client.executor": "Run",
+    "Application.run chat server.executor": "Run",
+    "Application.testing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -65,6 +70,32 @@
       <command value="http-client &lt;request&gt;" />
     </option>
   </component>
+  <component name="RunManager" selected="Application.run chat client">
+    <configuration name="run chat client" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="realtimechat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run chat server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="realtimechat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="realtimechat" type="CompoundRunConfigurationType">
+      <toRun name="run chat client" type="Application" />
+      <toRun name="run chat server" type="Application" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.run chat server" />
+      <item itemvalue="Application.run chat client" />
+      <item itemvalue="Compound.realtimechat" />
+    </list>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -82,7 +113,8 @@
       <updated>1721983302228</updated>
       <workItem from="1721983303335" duration="1787000" />
       <workItem from="1721986516046" duration="4943000" />
-      <workItem from="1722036020416" duration="10529000" />
+      <workItem from="1722036020416" duration="14218000" />
+      <workItem from="1722063555089" duration="3221000" />
     </task>
     <task id="LOCAL-00001" summary="Started making server and client methods to send messages">
       <option name="closed" value="true" />
@@ -100,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722037877810</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Server finished.">
+      <option name="closed" value="true" />
+      <created>1722055792619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722055792619</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +148,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started making server and client methods to send messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started making server and client methods to send messages" />
+    <MESSAGE value="Server finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Server finished." />
   </component>
 </project>

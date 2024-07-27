@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -24,25 +25,23 @@ public class Server implements Runnable {
             server = new ServerSocket(9999);
             pool = Executors.newCachedThreadPool();
             System.out.println("Listening on port " + server.getLocalPort());
+            System.out.println("Listening on  " + server.getLocalSocketAddress()+"/"+server.getLocalPort());
+
             while (running) {
                 Socket client = server.accept();
                 var handler = new ConnectionHandler(client);
                 connections.add(handler);
                 pool.execute(handler);
             }
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             shutdown();
         }
-
     }
-
     public void broadcast(String message) {
         connections.forEach(connectionHandler -> {
             if (connectionHandler != null) connectionHandler.sendMessage(message);
         });
     }
-
     public void shutdown() {
         running = false;
         if (!server.isClosed()) {
@@ -59,7 +58,6 @@ public class Server implements Runnable {
     }
 
     class ConnectionHandler implements Runnable {
-
         private Socket client;
         private BufferedReader in;
         private PrintWriter out;
@@ -73,10 +71,14 @@ public class Server implements Runnable {
         public void run() {
             try {
                 out = new PrintWriter(client.getOutputStream(), true);
+                Scanner sc = new Scanner(System.in);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
                 out.println("What should I call you?");
+                out.println("Hello?");
                 nickname = in.readLine();
+                out.println("Hello?");
+                System.out.println(nickname);
                 System.out.println(nickname + " connected");
                 broadcast(nickname + " has joined the chat");
                 String message;
@@ -105,7 +107,7 @@ public class Server implements Runnable {
         }
 
         public void sendMessage(String message) {
-            out.println("message");
+            out.println(message);
         }
 
         public void shutdown() {
