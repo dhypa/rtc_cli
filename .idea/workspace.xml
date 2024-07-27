@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af76fe2a-0807-4850-b496-ae431200f428" name="Changes" comment="Server finished.">
-      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="af76fe2a-0807-4850-b496-ae431200f428" name="Changes" comment="Managed to fix bug caused by a bool not being set to true early enough." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +109,7 @@
       <workItem from="1721983303335" duration="1787000" />
       <workItem from="1721986516046" duration="4943000" />
       <workItem from="1722036020416" duration="14218000" />
-      <workItem from="1722063555089" duration="3221000" />
+      <workItem from="1722063555089" duration="3583000" />
     </task>
     <task id="LOCAL-00001" summary="Started making server and client methods to send messages">
       <option name="closed" value="true" />
@@ -140,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722055792619</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Managed to fix bug caused by a bool not being set to true early enough.">
+      <option name="closed" value="true" />
+      <created>1722067051092</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722067051092</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +152,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started making server and client methods to send messages" />
     <MESSAGE value="Server finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Server finished." />
+    <MESSAGE value="Managed to fix bug caused by a bool not being set to true early enough." />
+    <option name="LAST_COMMIT_MESSAGE" value="Managed to fix bug caused by a bool not being set to true early enough." />
   </component>
 </project>
