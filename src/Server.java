@@ -44,6 +44,7 @@ public class Server implements Runnable {
     }
     public void shutdown() {
         running = false;
+        pool.shutdown();
         if (!server.isClosed()) {
             try {
                 server.close();
@@ -75,10 +76,7 @@ public class Server implements Runnable {
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
                 out.println("What should I call you?");
-                out.println("Hello?");
                 nickname = in.readLine();
-                out.println("Hello?");
-                System.out.println(nickname);
                 System.out.println(nickname + " connected");
                 broadcast(nickname + " has joined the chat");
                 String message;
@@ -95,6 +93,11 @@ public class Server implements Runnable {
                         }
                     } else if (message.startsWith("/quit")) {
                         broadcast(nickname + " has better things to do with their life");
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
                         shutdown();
                     } else {
                         broadcast(nickname + " : " + message);
@@ -113,6 +116,7 @@ public class Server implements Runnable {
         public void shutdown() {
             if (!client.isClosed()) {
                 try {
+
                     in.close();
                     out.close();
                     client.close();

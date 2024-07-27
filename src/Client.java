@@ -19,7 +19,7 @@ public class Client implements Runnable {
     public void run() {
         try {
             running = true;
-            Socket client = new Socket("localhost", 9999);
+            client = new Socket("localhost", 9999);
             out = new PrintWriter(client.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
@@ -65,6 +65,7 @@ public class Client implements Runnable {
                     String message = inReader.readLine();
 
                     if (message.startsWith("/quit")){
+                        out.println(message);
                         inReader.close();
                         shutdown();
                     } else {
